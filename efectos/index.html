@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>efectos</title>
+	<link rel="stylesheet" href="">
+
+	<style type="text/css">
+		.togglear{
+			background-color: yellow;
+		}
+		.der{
+			background-color: red;
+		}
+
+		.imagen{
+			box-shadow: 0px 0px 5px 3px black;
+			width: 600px;
+			height: 600px;
+
+		}
+
+		.addClass{
+
+		}
+
+		.aver{
+			width: 250px;
+			height: 250px;
+		}
+
+
+	</style>
+
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+
+	<p class="der">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+	<button id="btnEsconder" type="button">Esconder</button>
+
+	<button id="btnMostrar" type="button">Mostrar</button><br>
+
+	<input id="btnToggle" type="button" name="" value="toggle">
+
+	<p class="togglear">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+	<input class="fadeOut" type="button" name="" value="fadeOut"><br>
+
+	<img class="imagen" src="https://www.definicionabc.com/wp-content/uploads/Paisaje-Natural.jpg" alt=""><br>
+
+	<input class="fadeIn" type="button" name="" value="fadeIn"><br>
+
+	<button class="btnAdd" type="button">addClass</button><br>
+
+	<img class="lindo" src="http://www.arqhys.com/wp-content/uploads/2017/03/tipos-de-paisaje-natural.jpg" alt=""><br>
+
+	<button id="btnRemove" type="button">removeClass</button><br>
+
+	<img class="aver" src="https://i.blogs.es/ad99ca/15942577036_696d2b142a_k/450_1000.jpg" alt="">
+
+	<script>
+		$("#btnEsconder").click(function(){
+			$("p").hide(5000,function(){
+
+			});
+		});
+
+		$("#btnMostrar").click(function(){
+			$("p").show(3000,function(){
+
+			});
+		});
+
+		$("#btnToggle").click(function(){
+			$("#togglear").toggle(8000,function(){
+
+			});
+		});
+
+		$("p").click(function(){
+			$(this).toggleClass("der");
+		})
+
+		$(".fadeOut").click(function(){
+			$("img").fadeOut(5000,function(){
+				alert("A donde se fue? oh my GOOOD");
+			})
+		})
+
+		$(".fadeIn").click(function(){
+			$("img").fadeIn(8000,function(){
+				alert("No se asuste! Ahí está! jajajaa");
+			})
+		})
+
+		$(".imagen").mouseout(function(){
+			$(this).css("width","300px","height");
+		})
+
+		$(".imagen").mouseout(function(){
+			$(this).css("border-radius","100%");
+		})
+
+
+		$(".btnAdd").click(function(){
+			$(".lindo").addClass("imagen");
+		})
+
+		$("#btnRemove").click(function(){
+			$(".lindo").removeClass().addClass("aver");
+		})
+
+
+	</script>
+
+</body>
+</html>
